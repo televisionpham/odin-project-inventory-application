@@ -1,0 +1,17 @@
+extend layout 
+
+block content 
+    header
+        h1=title
+        a(class='btn btn-primary', href='/category/create') Add
+    div(class='category-list')
+        each category in categoryList 
+            div(class='category')
+                div(class='category-name')
+                    a(href=category.url)=category.name
+                    div(class='buttons')
+                        a(class='btn btn-primary', href='/category/edit' + category._id) Edit
+                        form(action='/category', method='delete')
+                            input(value=category._id, hidden)
+                            button(type='submit', class=('btn btn-danger')) Delete
+                div(class='category-description')=category.description
