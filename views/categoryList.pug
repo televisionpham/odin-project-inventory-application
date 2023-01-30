@@ -10,8 +10,7 @@ block content
                 div(class='category-name')
                     a(href=category.url)=category.name
                     div(class='buttons')
-                        a(class='btn btn-primary', href='/category/edit' + category._id) Edit
-                        form(action='/category', method='delete')
-                            input(value=category._id, hidden)
+                        a(class='btn btn-primary', href='/category/' + category._id + "/update") Edit
+                        form(action=`/category/${category._id}/delete`, method='post')                            
                             button(type='submit', class=('btn btn-danger')) Delete
                 div(class='category-description')=category.description

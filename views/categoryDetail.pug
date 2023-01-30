@@ -1,0 +1,15 @@
+extends layout
+block content
+    div(class="category")
+        div(class="category-name")=category.name
+        div(class="category-description")=category.description
+    h2 Items
+    div(class='item-list')
+        each item in itemList 
+            div(class='item')
+                div(class='item-name')=item.name
+                div(class='item-body')
+                    div(class='item-category')='Category: '
+                        a(href=category.url)=category.name
+                    div(class='item-description')=item.description
+                    div(class='item-price')=item.price

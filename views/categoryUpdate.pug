@@ -1,0 +1,11 @@
+extends layout 
+block content 
+    h1 Update Category 
+    form(action=`/category/${category._id}/update`, method='post')
+        div(class='form-control')
+            label(for='name') Name
+            input(id='name', name='name', required, value=category.name)
+        div(class='form-control')
+            label(for='description') Description
+            textarea(id='description', name='description')=category.description
+        button(type='submit', class='btn btn-primary') Update

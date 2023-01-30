@@ -1,0 +1,11 @@
+extends layout 
+block content 
+    h1 Create new category
+    form(action='/category/create', method='post')
+        div(class='form-control')
+            label(for='name') Name
+            input(id='name', name='name', required)
+        div(class='form-control')
+            label(for='description') Description
+            textarea(name="", cols="30", rows="10") (id='description', name='description')
+        button(type='submit', class='btn btn-primary') Submit
